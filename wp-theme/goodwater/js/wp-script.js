@@ -66,18 +66,31 @@ jQuery(document).ready(function(){
 
 	});
 
+	function debounce( timeout, func){
+		var timer;
+		return function(arg) {
+			clearTimeout(timer);
+			timer = setTimeout(function () {
+				func(arg);
+			}, timeout);
+		};
+	}
+
 	// Portfolio Search
-	jQuery('.filter__searchbar button').on("click",function(e){
-		e.preventDefault();
-		jQuery(".filter__nav.is--desktop .filter__subnav li").removeClass('active');
-		jQuery(".l-checkbox input[type=checkbox]")
-			.not($(this).parents(".filter__tab").find("input[type=checkbox]"))
-			.removeAttr("checked");
-		if(jQuery(this).parent().find("#searchPortfolio").val().length > 2){
-			var keyword = jQuery(this).parent().find("#searchPortfolio").val();
-	      	removeDivs();
+	var searchFilter = debounce(250, function (keyword) {
+		if(keyword === ''){
 			if(jQuery(window).width() <= 480){
-			    portfolioFilter("search",keyword,5);
+				load_portfolio(5);
+			}else{
+				load_portfolio(18);
+			}
+		} else {
+			jQuery(".filter__nav.is--desktop .filter__subnav li").removeClass('active');
+			jQuery(".l-checkbox input[type=checkbox]")
+				.not($(this).parents(".filter__tab").find("input[type=checkbox]"))
+				.removeAttr("checked");
+			if(jQuery(window).width() <= 480){
+				portfolioFilter("search",keyword,5);
 			}else{
 				portfolioFilter("search",keyword,18);
 			}
@@ -85,14 +98,11 @@ jQuery(document).ready(function(){
 	});
 
 	jQuery('.filter__searchbar input').on("keyup", function(e) {
-		if(jQuery(this).val() === ''){
-			if(jQuery(window).width() <= 480){
-				removeDivs();
-				load_portfolio(5);
-			}else{
-				removeDivs();
-				load_portfolio(18);
-			}
+		removeDivs();
+		var keyword = jQuery(this).val();
+		var isLoading = jQuery(".filter-boxes-wrapper .loader").css('display') === 'block';
+		if (!isLoading) {
+			searchFilter(keyword);
 		}
 	});
 

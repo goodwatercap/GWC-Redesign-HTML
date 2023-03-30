@@ -5,7 +5,7 @@ are separate projects right now, we hope to combine them at a later point and se
 auto deployment to the wordpress environment. The deployment of changes is managed directly through WP-Admin (see Environments for more details) - we don't currently deploy through GH. Also note that it's currently not possible to spin up a local version of the GWC website (see TODO).
 
 ## Environments
-To make changes to the Goodwater main site, we can use the WP-Admin UI. To get access to these environments in WP-Admin, you need to [provision an account through WP Engine](https://goodwater.slab.com/posts/wp-admin-access-c1kurtdx).
+To make changes to the Goodwater main site, we can use the WP-Admin UI. To get access to these environments in WP-Admin, you need to [provision an account through WP Engine](https://goodwater.slab.com/posts/wp-admin-access-c1kurtdx). \
 Dev: https://goodwatercadev.wpengine.com/wp-admin
 
 Prod: https://goodwatercap.com/wp-admin

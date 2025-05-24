@@ -307,10 +307,10 @@
       }
     }
   }
-  &--captal {
-    padding: rem(0) 0 rem(59);
+  &--about {
+    padding: rem(75) 0 rem(59);
     @media #{$lg} {
-      padding: rem(54) 0 rem(65);
+      padding: rem(129) 0 rem(65);
     }
     .approach__slider {
       .slick-track {

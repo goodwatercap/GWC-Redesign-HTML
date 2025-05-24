@@ -151,16 +151,12 @@ function goodwater_scripts() {
 	wp_enqueue_style( 'page-ahead-main-style', get_template_directory_uri() . '/css/main.css', array(), _S_VERSION );
 	// Spacing Style
     wp_enqueue_style( 'page-ahead-additional-style', get_template_directory_uri() . '/css/additional.css', array(), _S_VERSION );
-	// Animation Style
-//	wp_enqueue_style( 'page-ahead-animation-style', get_template_directory_uri() . '/css/animation.css', array(), _S_VERSION );
 	// Main Script
 	wp_enqueue_script( 'page-ahead-main-js', get_template_directory_uri() . '/js/script.js', array(), _S_VERSION, true );
 	// WP Script
 	wp_enqueue_script( 'page-ahead-wp-script-js', get_template_directory_uri() . '/js/wp-script.js', array(), _S_VERSION, true );
     // Tabbis Script
     wp_enqueue_script( 'page-ahead-tabbis-js', get_template_directory_uri() . '/js/tabbis.es6.min.js', array(), _S_VERSION, true );
-	// Animation Script
-//	wp_enqueue_script( 'page-ahead-animation-js', get_template_directory_uri() . '/js/animation.js', array(), _S_VERSION, true );
     // Fancy box Script
     wp_enqueue_script( 'page-ahead-fancybox-js', get_template_directory_uri() . '/js/thesis/jquery.fancybox.pack.js', array(), _S_VERSION, true );
     //Thesis Script

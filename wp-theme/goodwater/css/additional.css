@@ -397,6 +397,11 @@ footer.footer-text {
   display: block;
 }
 
+@media screen and (max-width: 596px) {
+  .gwc.healthcare {
+    padding-bottom: 17rem;
+  }
+}
 @media screen and (min-width: 991px) {
   .gwc.healthcare .healthcare__box {
     padding: 5.1875rem 4.875rem;
@@ -417,20 +422,6 @@ footer.footer-text {
   .gwc.healthcare .healthcare__box .healthcare__content .l-btn {
     margin-top: 1.875rem;
     margin-left: 0;
-  }
-  .gwc.investment {
-    padding: 9.375rem 0 11.1875rem
-  }
-  .gwc.investment .container > .healthcare__slider {
-    margin-left: 15%;
-  }
-
-}
-
-/*TODO fix this on main.css listed @media screen (min-width: 991px) and (min-width: 1440px), should be max-width: 1440px*/
-@media screen and (min-width: 1440px) {
-  .gwc.model .model__wrap .model__title {
-    padding-right: 5rem;
   }
 }
 
@@ -465,170 +456,6 @@ footer.footer-text {
 
 .footer__thesis {
   margin-bottom: 2.375rem;
-}
-
-.gwc.model.accordion .l-accordion .l-accordion__title span {
-  background-color: transparent;
-  border: 1px solid white;
-  color: white
-}
-
-.gwc.model.accordion .l-accordion .l-accordion__title::after {
-  background-color: white;
-  -webkit-mask-image: url(../images/img-accordion.svg);
-  mask-image: url(../images/img-accordion.svg);
-  mask-size: contain;
-  -webkit-mask-size: contain;
-  background-image: unset;
-}
-
-.gwc.model.accordion .l-accordion .l-accordion__title h3 {
-  color: #B9E9F9;
-}
-
-.gwc.model.accordion p {
-  color: white;
-  font-size: 1.5rem;
-  line-height: 1.95rem;
-}
-
-.gwc.model.accordion .model__heading {
-  margin-bottom: 0;
-}
-
-.gwc.model.accordion .accordion__wrap {
-  margin-top: 1.65rem;
-}
-
-.gwc.model.accordion .model-link {
-  font-size: 0.9375rem;
-  color: white;
-}
-
-.gwc.model.accordion .model-link i{
-  padding-left: 0.3rem;
-}
-
-.gwc.model.accordion .model-link:hover{
-  text-decoration: underline;
-}
-
-.gwc.model.accordion .l-accordion__block {
-  max-width: 42rem;
-
-}
-.gwc.model.accordion .logo {
-  margin-top: -2rem;
-  max-width: 42rem;
-  flex-grow: 1;
-}
-
-.gwc.model.accordion .l-accordion__content__wrap {
-  display: flex;
-  gap: 5.9rem;
-}
-
-@media screen and (min-width: 851px) and (max-width: 1300px) {
-  .gwc.model.accordion .l-accordion__block {
-    width: 70%;
-  }
-  .gwc.model.accordion .l-accordion__content__wrap {
-    gap: 4rem;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  .gwc.model.accordion .accordion__wrap {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .gwc.model.accordion .model__wrap {
-    display: none;
-  }
-}
-
-
-.gwc.model .model__heading h3 {
-  text-align: left;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 700;
-}
-.gwc.model .model__heading h3::before {
-  background-color: #ffffff;
-}
-
-.gwc.model {
-  padding-top: 2.5rem;
-}
-@media screen and (min-width: 576px) and (max-width: 990px) {
-  .gwc.model {
-    padding: 3rem 0 3rem;
-  }
-}
-
-
-@media screen and (max-width: 850px) {
-  .gwc.model.accordion .l-accordion__content__wrap {
-    flex-direction: column-reverse;
-    gap: unset;
-  }
-  .gwc.model.accordion .logo {
-    margin-top: unset;
-    padding-bottom: 2.5rem;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .gwc.model.accordion .l-accordion__block {
-    padding-left: 4rem;
-    padding-bottom: 3.0625rem;
-    padding-top: 0.9375rem;
-  }
-}
-
-@media screen and (min-width: 991px) {
-  .gwc.model.accordion .l-accordion__block {
-    padding-left: 5.375rem;
-  }
-}
-
-.gwc.model .logo .overlay_wrapper {
-  position: relative;
-}
-
-.gwc.model .logo .overlay {
-  position: absolute;
-  width: 100%;
-  height: 330px;
-}
-
-.gwc.model .logo .overlay.Genesis {
-  background: linear-gradient(to right,rgba(24, 28, 75, 0.0),  rgba(24, 28, 75, 0.7), rgba(24, 28, 75, 0.7), rgba(24, 28, 75, 0.7) );
-}
-
-.gwc.model .logo .overlay.Capital {
-  background: linear-gradient(to right,rgba(24, 28, 75, 0.7),  rgba(24, 28, 75, 0.7), rgba(24, 28, 75, 0.0), rgba(24, 28, 75, 0.7), rgba(24, 28, 75, 0.7) );
-}
-
-.gwc.model .logo .overlay.Collective {
-  background: linear-gradient(to right,rgba(24, 28, 75, 0.7),  rgba(24, 28, 75, 0.7), rgba(24, 28, 75, 0.7), rgba(24, 28, 75, 0.0) );
-}
-
-
-
-@media screen and (min-width: 576px) and (max-width: 850px) {
-  .gwc.model.accordion .logo {
-    padding-left: 5.375rem;
-    padding-bottom: 2.5rem;
-  }
-}
-
-.gwc.model.accordion .slick-dots {
-  position: unset;
-  margin-top: 1.875rem;
 }
 
 @media screen and (max-width: 1456px) {
@@ -675,10 +502,13 @@ footer.footer-text {
   .gwc.meet {
     padding: 4.875rem 0 8.875rem; } }
 
+@media screen and (min-width: 991px) {
+  .gwc.meet {
+    padding: 0.875rem 0 8.875rem; } }
 
 @media screen and (min-width: 1400px) {
   .gwc.meet {
-    padding: 4.875rem 0 12.875rem; } }
+    padding: 0.875rem 0 12.875rem; } }
 
 
 @media screen and (min-width: 623px) {
@@ -1467,11 +1297,6 @@ footer.footer-text {
   }
 }
 
-@media screen and (max-width: 575px) {
-  .gwc.model .model__heading {
-    padding-bottom: 1.875rem;
-  }
-}
 
 @media screen and (max-width: 990px) {
   .gwc.delivery .delivery__slider .delivery__tab .delivery__content .delivery__logo {

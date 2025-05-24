@@ -8,9 +8,7 @@
  */
 
 get_header(); ?>
-    
-<!-- Header Section -->
-<?php get_template_part('template-parts/home/header'); ?>
+
 <!-- Banner Section -->
 <?php get_template_part('template-parts/home/banner'); ?>
 <!-- About Section -->

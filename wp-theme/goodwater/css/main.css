@@ -2276,63 +2276,6 @@ em {
     .gwc.card {
       margin-bottom: 2.125rem; } }
 
-.gwc.brand {
-  background-color: #181c4b;
-  padding: 12.3125rem 0rem 2.375rem;
-  display: none; }
-  @media screen and (min-width: 991px) {
-    .gwc.brand {
-      display: block; } }
-  .gwc.brand .brand__wrap {
-    display: flex;
-    align-items: flex-end; }
-    .gwc.brand .brand__wrap .brand__logo {
-      width: 69%;
-      flex: 0 0 69%; }
-      @media screen and (min-width: 1410px) {
-        .gwc.brand .brand__wrap .brand__logo {
-          width: 74%;
-          flex: 0 0 74%; } }
-      .gwc.brand .brand__wrap .brand__logo a {
-        display: inline-block;
-        visibility: hidden; }
-        .gwc.brand .brand__wrap .brand__logo a img {
-          width: 56.4375rem; }
-    .gwc.brand .brand__wrap .brand__text {
-      width: 31%;
-      flex: 0 0 32%;
-      padding-bottom: 0.8125rem;
-      border-left: 1.5px solid #93a1ae;
-      padding-left: 4.125rem;
-      margin-top: -0.625rem;
-      padding-top: 1.875rem; }
-      @media screen and (min-width: 1410px) {
-        .gwc.brand .brand__wrap .brand__text {
-          width: 26%;
-          flex: 0 0 26%; } }
-      .gwc.brand .brand__wrap .brand__text h2 {
-        font-weight: 400;
-        font-size: 1.6875rem;
-        letter-spacing: -0.02em;
-        color: #5dbdf0;
-        display: inline-block;
-        font-size: 0.875rem;
-        line-height: 0.875rem;
-        font-family: "Untitled Serif"; }
-        @media screen and (min-width: 768px) {
-          .gwc.brand .brand__wrap .brand__text h2 {
-            font-size: 1.6875rem;
-            line-height: 1.6875rem; } }
-        @media screen and (min-width: 1199px) {
-          .gwc.brand .brand__wrap .brand__text h2 {
-            font-size: 2.625rem;
-            line-height: 2.625rem; } }
-        .gwc.brand .brand__wrap .brand__text h2 span {
-          font-style: italic; }
-          @media screen and (min-width: 1199px) {
-            .gwc.brand .brand__wrap .brand__text h2 span {
-              display: block; } }
-
 .gwc.care {
   padding: 0rem 0 2.4375rem; }
   @media screen and (min-width: 991px) {

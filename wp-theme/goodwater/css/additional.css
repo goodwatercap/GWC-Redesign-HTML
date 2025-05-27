@@ -1317,8 +1317,14 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
   font-size: 0.8rem;
 }
 .gwc.accordion.accordion--about .l-accordion .accordion__title {
-  padding: 1.5rem 0 0.5rem 0;
+  padding: 1.5rem 0 0 0;
 }
+@media screen and (max-width: 990px) {
+  .gwc.accordion.accordion--about .accordion__wrap {
+    padding-bottom: 0.5rem;
+  }
+}
+
 .gwc.accordion.accordion--about {
   padding: 2.5625rem 0 2.125rem;
 }

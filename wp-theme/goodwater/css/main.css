@@ -1540,14 +1540,13 @@ em {
       transform: translateY(-50%) rotate(180deg); }
   .gwc.accordion p {
     font-size: 1.5rem;
-    line-height: 1.9375rem;
+    line-height: 1.5rem;
     font-family: "Untitled Serif";
     font-weight: 400;
     color: #4a5c76; }
     @media screen and (min-width: 991px) {
       .gwc.accordion p {
-        font-size: 2rem;
-        line-height: 2.375rem; } }
+        font-size: 1.5rem; } }
   .gwc.accordion .l-accordion__block {
     max-width: 42.25rem;
     padding-bottom: 1.5rem; }

@@ -1373,7 +1373,6 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
   padding-right: 2.5rem; }
 @media screen and (min-width: 991px) {
   .gwc.accordion .l-accordion .accordion__title {
-    padding-right: 3.125rem;
     padding: 1.8125rem 0 2.5rem; } }
 .gwc.accordion .l-accordion .accordion__title h3 {
   font-size: 2.375rem;
@@ -1394,7 +1393,6 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
   color: #4a5c76;
   background-color: #fff;
   border-radius: 50%;
-  display: inline-block;
   width: 2.25rem;
   height: 2.25rem;
   display: inline-flex;

@@ -51,11 +51,7 @@
 	            	<div class="header__nav"> 
 	            		<!-- Main Menu -->
 		              	<?php get_template_part('template-parts/menu/main-menu');?>
-		              	<div class="header__anchor"> 
-		              		<!-- <?php //if( get_field('login_button', 'option') ):
-		              			//$login = get_field('login_button', 'option');?>
-		              			<a class="l-btn" href="<?php //echo $login['url'];?>" title="<?php// echo $login['title'];?>"><?php //echo $login['title'];?> <i> <svg width="11" height="11" viewbox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21047 1.17139H9.41407M9.41407 1.17139L9.17486 9.3715M9.41407 1.17139L0.500392 9.82837" stroke="white" stroke-width="1.25"></path></svg></i></a>
-		              		<?php //endif;?> -->
+		              	<div class="header__anchor">
 		                	<div class="header__bottom is--mobile">
 		                  		<div class="header__col">
 		                    		<div class="header__contact"> 

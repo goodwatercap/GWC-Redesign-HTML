@@ -223,7 +223,7 @@ function thesis_posts_query() {
 /* Fix to get goodwatercap.com/thesis/page/2 to not return a 404 error */
 function remove_page_from_query_string($query_string)
 {
-    if ($query_string['name'] == 'page' && isset($query_string['page'])) {
+    if (array_key_exists('name',$query_string) && $query_string['name'] == 'page' && isset($query_string['page'])) {
         unset($query_string['name']);
         $query_string['paged'] = $query_string['page'];
     }

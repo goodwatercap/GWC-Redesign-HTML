@@ -1,6 +1,6 @@
-<?php if( $args['class'] ){
+<?php if( array_key_exists('class', $args )){
     $class_name = $args['class'];
-    $button_on_left = $args['button_on_left'];
+    $button_on_left = array_key_exists('button_on_left',$args)?$args['button_on_left']:"";
 }?>
 <div class="gwc consumer <?php echo $class_name;?>"> 
     <div class="container"> 

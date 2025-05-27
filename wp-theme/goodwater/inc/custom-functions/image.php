@@ -22,8 +22,8 @@ function image_from_id($id){
 
 function get_image($data){
 
-    $id     = ($data['imgid'])?$data['imgid']:'';
-    $url    = ($data['url'])?$data['url']:"";
+    $id     = array_key_exists('imgid',$data)?$data['imgid']:'';
+    $url    = array_key_exists('url',$data)?$data['url']:"";
     
     if($url){
         $id = image_from_url($url);
@@ -35,13 +35,13 @@ function get_image($data){
 
     if($url && $id){
       
-        $img_id    = ($data['id'])?$data['id']:"";
-        $img_class = ($data['class'])?$data['class']:"";
-        $img_set   = ($data['set'])?$data['set']:"";
-        $img_lazy  = ($data['lazy'])?$data['lazy']:"";
-        $img_type  = ($data['type'])?$data['type']:"";
-        $img_size  = ($data['size'])?$data['size']:"";
-        $img_anim  = ($data['anim'])?$data['anim']:"";
+        $img_id    = array_key_exists('id',$data)?$data['id']:"";
+        $img_class = array_key_exists('class',$data)?$data['class']:"";
+        $img_set   = array_key_exists('set',$data)?$data['set']:"";
+        $img_lazy  = array_key_exists('lazy',$data)?$data['lazy']:"";
+        $img_type  = array_key_exists('type',$data)?$data['type']:"";
+        $img_size  = array_key_exists('size',$data)?$data['size']:"";
+        $img_anim  = array_key_exists('anim',$data)?$data['anim']:"";
        
 
         $image_alt = get_post_meta( $id, '_wp_attachment_image_alt', true );

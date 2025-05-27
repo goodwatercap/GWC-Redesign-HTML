@@ -3968,7 +3968,8 @@ p {
       background-image: url("../images/infinity.svg");
       padding: 4.9375rem 0 0; } }
   .gwc.impact .container {
-    padding: 0 1.5rem; }
+    padding: 0 1.5rem;
+    max-width: 1100px; }
     @media screen and (min-width: 1199px) {
       .gwc.impact .container {
         padding: 0 6.4375rem; } }
@@ -4037,7 +4038,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%; }
+    width: 100%;}
     @media screen and (min-width: 768px) {
       .gwc.impact .impact__cards {
         display: grid;

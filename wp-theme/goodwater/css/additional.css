@@ -184,7 +184,7 @@ footer.footer-text {
     padding-bottom: 2.5rem;
   }
 }
-@media screen and (min-width: 991px) and (max-width: 1376px) {
+@media screen and (min-width: 991px) {
   .gwc.impact .impact__cards .impact__card .card {
     height: 17rem;
     width: 24rem;
@@ -425,28 +425,6 @@ footer.footer-text {
   }
 }
 
-@media screen and (min-width: 1377px) {
-  .gwc.impact .impact__cards .impact__card {
-    max-width: 455px
-  }
-  .gwc.impact .impact__card:nth-child(1) {
-    margin-top: 170px;
-  }
-  .gwc.impact .impact__card:nth-child(3) {
-    margin-top: 170px;
-  }
-  .gwc.impact .impact__card:nth-child(4) {
-    margin-top: -170px;
-  }
-
-  .home .gwc.impact .container {
-    padding: 0;
-  }
-
-  .gwc.impact .impact__title {
-    margin-bottom: 4.3125rem;
-  }
-}
 
 @media screen and (min-width: 991px) {
   .gwc.impact .impact__card:nth-child(1) {
@@ -458,7 +436,7 @@ footer.footer-text {
   margin-bottom: 2.375rem;
 }
 
-@media screen and (max-width: 1456px) {
+
   .impact__card .gwc.card h4 {
     font-size: 1.75rem;
     line-height: 1.925rem
@@ -474,23 +452,9 @@ footer.footer-text {
     font-size: 5rem;
     line-height: 4.25rem;
   }
-}
 
-@media screen and (min-width: 1457px) {
-  .impact__card .gwc.card h4 {
-    font-size: 2rem;
-    line-height: 2.1875rem
-  }
 
-  .impact__cards .gwc.card h2 {
-    font-size: 6rem;
-    line-height: 5.125rem;
-    margin-bottom: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1457px) {
+@media screen and (min-width: 768px) {
   .gwc.impact .impact__cards .impact__card {
     width: auto;
     max-width: 25.975rem;

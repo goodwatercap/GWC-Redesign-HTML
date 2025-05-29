@@ -34,21 +34,25 @@
                                             <h4><div class="meet__invested_in">invested in</div><div><?php echo esc_html($year);?></div></h4>
                                         <?php endif;?>
                                     </div>
-                                    <?php if($tag):?>
-                                        <span class="l-tag"><?php echo esc_html($tag);?></span>
-                                    <?php endif;?>
-                                    <?php if($location):?>
-                                        <span class="l-tag"><?php echo esc_html($location);?></span>
-                                    <?php endif;?>
-                                    <div class="meet__content">
-                                        <?php echo apply_filters('the_content', $content);?>
-                                        <?php if($link):?>
-                                            <a href="<?php echo $link['url'];?>" target="<?php echo $link['target'];?>" title="<?php echo $title .' '. $link['title'];?>" target="_blank"><?php echo $link['title'];?></a>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <div>
+                                            <?php if($tag):?>
+                                                <span class="l-tag"><?php echo esc_html($tag);?></span>
+                                            <?php endif;?>
+                                            <?php if($location):?>
+                                                <span class="l-tag"><?php echo esc_html($location);?></span>
+                                            <?php endif;?>
+                                            <div class="meet__content">
+                                                <?php echo apply_filters('the_content', $content);?>
+                                                <?php if($link):?>
+                                                    <a href="<?php echo $link['url'];?>" target="<?php echo $link['target'];?>" title="<?php echo $title .' '. $link['title'];?>" target="_blank"><?php echo $link['title'];?></a>
+                                                <?php endif;?>
+                                            </div>
+                                        </div>
+                                        <?php if($image):?>
+                                            <div class="meet__thumb"><?php echo get_image(array('url'=>$image));?></div>
                                         <?php endif;?>
                                     </div>
-                                    <?php if($image):?>
-                                        <div class="meet__thumb"><?php echo get_image(array('url'=>$image));?></div>
-                                    <?php endif;?>
                                     <div class="meet__nav"> 
                                         <div class="meet__slider-arrow">
                                             <button class="meet__arrow meet__arrow--prev" role="button" aria-label="Previous">

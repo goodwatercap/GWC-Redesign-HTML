@@ -557,9 +557,9 @@ footer.footer-text {
 
 @media screen and (min-width: 623px) {
   .gwc.meet .meet__card .meet__thumb {
+    position: relative;
     max-width: calc(100% - 16rem);
     right: 2.5rem;
-    bottom: -1.25rem;
     left: auto;
     top: auto; } }
 
@@ -571,12 +571,7 @@ footer.footer-text {
 @media screen and (min-width: 991px) {
   .gwc.meet .meet__card .meet__thumb {
     right: 5.9375rem;
-    bottom: -2.25rem;
     max-width: calc(100% - 30rem); } }
-
-@media screen and (min-width: 1400px) {
-  .gwc.meet .meet__card .meet__thumb {
-    bottom: -4.25rem;} }
 
 .gwc.meet .meet__card .meet__button {
   bottom: 12.625rem;

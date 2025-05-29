@@ -607,6 +607,28 @@ footer.footer-text {
   text-align: right;
 }
 
+@media screen and (max-width: 622px) {
+  .gwc.meet .meet__card .meet__thumb__box {
+    position: absolute;
+    margin: 0 auto;
+    max-width: 10.5rem;
+    top: -3.1875rem;
+    left: 0.9375rem;
+    right: 0.9375rem;
+  }
+}
+
+@media screen and (min-width: 623px) {
+  .gwc.meet .meet__card .meet__thumb__box {
+    padding-right: 15%;
+  } }
+
+@media screen and (min-width: 623px) {
+  .gwc.meet .meet__card .meet__thumb__box img {
+    max-height: 20rem;
+  }
+}
+
 @media screen and (max-width: 990px) {
   .gwc.healthcare.healthcare--slider {
     max-width: 327px;

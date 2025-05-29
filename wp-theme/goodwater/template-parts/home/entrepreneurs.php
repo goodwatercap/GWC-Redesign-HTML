@@ -22,6 +22,7 @@
                             $year       = get_sub_field('year');
                             $title      = get_sub_field('title');
                             $image      = get_field('oval_image', $featured_company->ID);
+                            $boxImage   = get_field('box_image', $featured_company->ID);
                             $content    = $featured_company->post_content;
                             $tag        = get_field('tag_name', $featured_company->ID);
                             $location   = get_field('location', $featured_company->ID);
@@ -51,6 +52,8 @@
                                         </div>
                                         <?php if($image):?>
                                             <div class="meet__thumb"><?php echo get_image(array('url'=>$image));?></div>
+                                        <?php elseif($boxImage):?>
+                                            <div class="meet__thumb__box"><?php echo get_image(array('url'=>$boxImage));?></div>
                                         <?php endif;?>
                                     </div>
                                     <div class="meet__nav"> 

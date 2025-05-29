@@ -31,7 +31,7 @@
                                     <div class="meet__headings">
                                         <h2><?php echo esc_html($title);?></h2>
                                         <?php if($year):?>
-                                            <h4><?php echo esc_html($year);?></h4>
+                                            <h4><div class="meet__invested_in">invested in</div><div><?php echo esc_html($year);?></div></h4>
                                         <?php endif;?>
                                     </div>
                                     <?php if($tag):?>
@@ -46,22 +46,17 @@
                                             <a href="<?php echo $link['url'];?>" target="<?php echo $link['target'];?>" title="<?php echo $title .' '. $link['title'];?>" target="_blank"><?php echo $link['title'];?></a>
                                         <?php endif;?>
                                     </div>
-                                    <?php if($label):?>
-                                        <div class="meet__button"> 
-                                            <p><?php echo esc_html($label);?></p>
-                                        </div>
-                                    <?php endif;
-                                    if($image):?>
+                                    <?php if($image):?>
                                         <div class="meet__thumb"><?php echo get_image(array('url'=>$image));?></div>
                                     <?php endif;?>
                                     <div class="meet__nav"> 
                                         <div class="meet__slider-arrow">
-                                            <button class="meet__arrow meet__arrow--prev" role="button" aria-lebel="Previous">
+                                            <button class="meet__arrow meet__arrow--prev" role="button" aria-label="Previous">
                                                 <svg width="15" height="14" viewbox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M7.41142 1.32353L13.2122 7.12435M13.2122 7.12435L7.24474 12.7536M13.2122 7.12435L0.787908 6.94284" stroke="white" stroke-width="1.25"></path>
                                                 </svg>
                                             </button>
-                                            <button class="meet__arrow meet__arrow--next" role="button" aria-lebel="Next">
+                                            <button class="meet__arrow meet__arrow--next" role="button" aria-label="Next">
                                                 <svg width="15" height="14" viewbox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M7.41142 1.32353L13.2122 7.12435M13.2122 7.12435L7.24474 12.7536M13.2122 7.12435L0.787908 6.94284" stroke="white" stroke-width="1.25"></path>
                                                 </svg>

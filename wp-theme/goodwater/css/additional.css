@@ -604,6 +604,13 @@ footer.footer-text {
   .gwc.meet .meet__nav {
     justify-content: space-between; } }
 
+.gwc.meet .meet__invested_in {
+  font-size: 0.6rem;
+  line-height: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: right;
+}
 
 @media screen and (max-width: 990px) {
   .gwc.healthcare.healthcare--slider {

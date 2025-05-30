@@ -1392,3 +1392,59 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
   display: inline-flex;
   justify-content: center;
   align-items: center; }
+
+
+.gwc.team .people_container {
+  padding-top: 5rem;
+}
+
+.gwc.team .person {
+  display: flex;
+  gap: 3rem;
+  max-width: 991px;
+  padding-bottom: 5rem;
+}
+@media screen and (max-width: 622px) {
+  .gwc.team .person {
+    display: block;
+  }
+}
+
+
+.gwc.team .person h3 {
+  padding-bottom: 0.8rem;
+}
+
+.gwc.team .person .img__thumb {
+  flex: 1;
+  max-width: 233px;
+}
+@media screen and (max-width: 622px) {
+  .gwc.team .img__thumb  {
+    display: block;
+    padding-bottom: 1rem;
+    margin: 0 auto;
+  }
+}
+
+.gwc.team .person .img__thumb > img {
+  border-radius: 50%;
+}
+
+.gwc.team .person .content {
+  flex: 2;
+}
+
+.gwc.team h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #181c4b;
+}
+
+.gwc.team p {
+  font-family: "Untitled Sans";
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  color: #4a5c76;
+}

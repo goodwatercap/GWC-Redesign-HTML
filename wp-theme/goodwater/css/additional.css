@@ -464,15 +464,15 @@ footer.footer-text {
 
 @media screen and (min-width: 623px) {
   .gwc.meet {
-    padding: 4.875rem 0 8.875rem; } }
+    padding: 4.875rem 0 3.875rem; } }
 
 @media screen and (min-width: 991px) {
   .gwc.meet {
-    padding: 0.875rem 0 8.875rem; } }
+    padding: 0.875rem 0 3.875rem; } }
 
 @media screen and (min-width: 1400px) {
   .gwc.meet {
-    padding: 0.875rem 0 12.875rem; } }
+    padding: 0.875rem 0 3.875rem; } }
 
 
 @media screen and (min-width: 623px) {
@@ -1447,4 +1447,8 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
   font-size: 1.125rem;
   line-height: 1.6875rem;
   color: #4a5c76;
+}
+
+.home .gwc.delivery {
+  padding: 2.5625rem 0 2.5625rem
 }

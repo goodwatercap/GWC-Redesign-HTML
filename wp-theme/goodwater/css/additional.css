@@ -1414,6 +1414,11 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
 .gwc.team .person h3 {
   padding-bottom: 0.8rem;
 }
+.gwc.team .person h3 a img {
+  vertical-align: top;
+  height: 2rem;
+  padding-left: 0.2rem;
+}
 
 .gwc.team .person .img__thumb {
   flex: 1;

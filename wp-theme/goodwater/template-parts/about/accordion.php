@@ -5,12 +5,7 @@
                 <h2 class="l-caption"><?php echo esc_html(get_field('acclabel'));?></h2>
             <?php endif;?>
             <div class="accordion__wrap">
-                <?php while( have_rows('accordions') ) : the_row(); $count++;
-                    if($count<10):
-                        $count = "0".$count;
-                    else:
-                        $count;
-                    endif;?>
+                <?php while( have_rows('accordions') ) : the_row(); $count++; ?>
                     <div class="l-accordion">
                         <div class="accordion__title"> <span><?php echo $count;?></span>
                             <?php if( get_sub_field('acc_title') ):?>

@@ -1452,3 +1452,27 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
 .home .gwc.delivery {
   padding: 2.5625rem 0 2.5625rem
 }
+
+.gwc.banner--full-width .banner__inner .banner__wrap {
+  background-color: #181c4b;
+  min-height: 36rem;
+}
+.gwc.banner--full-width .banner__inner .banner__wrap::after {
+  background-image: url(../images/investment.svg);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-color: rgba(24,28,75,0.5);
+  background-blend-mode: darken;
+  top: 6rem;
+}
+
+@media screen and (max-width: 990px) {
+  .gwc.healthcare {
+    padding-top: 3rem;
+  }
+  .gwc.banner--full-width .banner__inner .banner__wrap {
+    min-height: 25rem;
+  }
+}
+
+

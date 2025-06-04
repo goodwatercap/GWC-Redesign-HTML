@@ -8,6 +8,9 @@
  */
 get_header(); ?>
 
+
+<!-- Banner Section -->
+<?php get_template_part('template-parts/inner-page/banner',null,array('class'=>'banner--team')); ?>
 <!-- People Section -->
 <?php get_template_part('template-parts/team/people') ?>
 

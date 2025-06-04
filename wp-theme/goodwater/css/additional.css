@@ -1398,6 +1398,12 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
   padding-top: 5rem;
 }
 
+@media screen and (min-width: 623px) {
+  .gwc.team .people_container {
+    padding-top: 7rem;
+  }
+}
+
 .gwc.team .person {
   display: flex;
   gap: 3rem;

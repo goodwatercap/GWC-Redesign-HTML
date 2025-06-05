@@ -705,6 +705,12 @@ footer.footer-text {
   }
 }
 
+@media screen and (max-width: 990px) {
+  .gwc.banner--full-width {
+    padding-top: 3.375rem;
+  }
+}
+
 @media screen and (min-width: 576px) and (max-width: 990px) {
   .gwc.banner--full-width .banner__message .banner__details h2 {
   }

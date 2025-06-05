@@ -1486,4 +1486,8 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
   }
 }
 
-
+@media screen and (max-width: 990px) {
+  .gwc.reach--capital .reach__wrap .reach__content {
+    padding-top: 1.5rem;
+  }
+}

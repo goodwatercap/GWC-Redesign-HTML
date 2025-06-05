@@ -1781,10 +1781,10 @@ em {
           .gwc.approach .approach__nav button.approach__arrow--prev:hover svg path {
             stroke: #fff; }
   .gwc.approach--about {
-    padding: 4.6875rem 0 3.6875rem; }
+    padding: 0 0 3.6875rem; }
     @media screen and (min-width: 991px) {
       .gwc.approach--about {
-        padding: 8.0625rem 0 4.0625rem; } }
+        padding: 3.0625rem 0 4.0625rem; } }
     .gwc.approach--about .approach__slider .slick-track {
       display: flex !important; }
       @media screen and (min-width: 1199px) {
@@ -4766,7 +4766,46 @@ p {
     margin-bottom: 1.625rem; }
     .gwc.reach .reach__thumb.is--mobile img {
       display: block; }
-
+  .gwc.reach--capital {
+    padding: 2.75rem 0 4.14687rem; }
+    @media screen and (min-width: 991px) {
+      .gwc.reach--capital {
+        padding: 6.25rem 0 3.75rem; } }
+    .gwc.reach--capital .reach__wrap {
+      margin-bottom: 1.5rem 0 0; }
+      @media screen and (min-width: 991px) {
+        .gwc.reach--capital .reach__wrap {
+          margin-top: 1.875rem; } }
+      .gwc.reach--capital .reach__wrap .reach__thumb {
+        margin: 2.75rem 0 0 !important; }
+        @media screen and (min-width: 991px) {
+          .gwc.reach--capital .reach__wrap .reach__thumb {
+            margin-top: -0.625rem !important; } }
+      .gwc.reach--capital .reach__wrap .reach__content {
+        margin-top: 0 !important; }
+        @media screen and (min-width: 991px) {
+          .gwc.reach--capital .reach__wrap .reach__content {
+            padding-right: 4rem;
+            flex: 0 0 54%;
+            width: 54%;
+            margin-top: 0rem !important;
+            max-width: 41rem !important; } }
+        .gwc.reach--capital .reach__wrap .reach__content h3 {
+          font-size: 1.5rem;
+          line-height: 1.9375rem;
+          color: #181c4b;
+          font-weight: 400; }
+          @media screen and (min-width: 991px) {
+            .gwc.reach--capital .reach__wrap .reach__content h3 {
+              font-size: 3rem;
+              font-weight: 700;
+              line-height: 3.625rem; } }
+        .gwc.reach--capital .reach__wrap .reach__content p {
+          font-size: 1.125rem;
+          line-height: 1.6875rem; }
+      .gwc.reach--capital .reach__wrap .reach__thumb {
+        padding-left: 0;
+        max-width: 37.6875rem !important; }
   .gwc.reach--about {
     padding: 3.125rem 0 2.25rem;
     margin-bottom: 0;

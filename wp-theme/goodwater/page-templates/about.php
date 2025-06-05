@@ -13,6 +13,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/inner-page/banner',null,array('class'=>'banner--about')); ?>
 <!-- Two column Content Section -->
 <?php get_template_part('template-parts/inner-page/two-column-content',null,array('class'=>'consumer--about')); ?>
+<!-- Investment Approach Section -->
+<?php get_template_part('template-parts/inner-page/two-col-text+image'); ?>
 <!-- Cards Section -->
 <?php get_template_part('template-parts/inner-page/cards'); ?>
 <!-- Number Cards Section -->

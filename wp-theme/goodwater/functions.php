@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.1.4' );
+	define( '_S_VERSION', '1.1.5' );
 }
 
 /**
@@ -215,6 +215,7 @@ function thesis_posts_query() {
     $wp_query = new WP_Query(array(
         'category_name' => 'thesis',
         'paged' => $paged,
+        'posts_per_page' => 10,
         'meta_key' => 'featured_order',
         'orderby' => ['meta_value' => 'ASC', 'date' => 'DESC']
     ));

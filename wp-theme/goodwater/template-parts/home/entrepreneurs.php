@@ -13,65 +13,48 @@
                 <?php endif;?>
             </div>
             <?php if( have_rows('entrepreneurs_companies') ):?>
-                <div class="meet__cards">
-                    <?php while( have_rows('entrepreneurs_companies') ) : the_row();
-                        $featured_company = get_sub_field('entrepreneurs_featured_company');
-                        if( $featured_company ):
-                            $bg_color   = get_sub_field('bg_color');
-                            $label      = get_sub_field('label');
-                            $year       = get_sub_field('year');
-                            $title      = get_sub_field('title');
-                            $image      = get_field('oval_image', $featured_company->ID);
-                            $content    = $featured_company->post_content;
-                            $tag        = get_field('tag_name', $featured_company->ID);
-                            $location   = get_field('location', $featured_company->ID);
-                            $link       = get_field('link', $featured_company->ID);?>
-                            <div class="meet__tab">
-                                <div class="meet__card <?php echo $bg_color;?>">
-                                    <div class="meet__headings">
-                                        <h2><?php echo esc_html($title);?></h2>
-                                        <?php if($year):?>
-                                            <h4><?php echo esc_html($year);?></h4>
-                                        <?php endif;?>
-                                    </div>
-                                    <?php if($tag):?>
-                                        <span class="l-tag"><?php echo esc_html($tag);?></span>
-                                    <?php endif;?>
-                                    <?php if($location):?>
-                                        <span class="l-tag"><?php echo esc_html($location);?></span>
-                                    <?php endif;?>
-                                    <div class="meet__content">
-                                        <?php echo apply_filters('the_content', $content);?>
-                                        <?php if($link):?>
-                                            <a href="<?php echo $link['url'];?>" target="<?php echo $link['target'];?>" title="<?php echo $title .' '. $link['title'];?>" target="_blank"><?php echo $link['title'];?></a>
-                                        <?php endif;?>
-                                    </div>
-                                    <?php if($label):?>
-                                        <div class="meet__button"> 
-                                            <p><?php echo esc_html($label);?></p>
-                                        </div>
-                                    <?php endif;
-                                    if($image):?>
-                                        <div class="meet__thumb"><?php echo get_image(array('url'=>$image));?></div>
-                                    <?php endif;?>
-                                    <div class="meet__nav"> 
-                                        <div class="meet__slider-arrow">
-                                            <button class="meet__arrow meet__arrow--prev" role="button" aria-lebel="Previous">
-                                                <svg width="15" height="14" viewbox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M7.41142 1.32353L13.2122 7.12435M13.2122 7.12435L7.24474 12.7536M13.2122 7.12435L0.787908 6.94284" stroke="white" stroke-width="1.25"></path>
-                                                </svg>
-                                            </button>
-                                            <button class="meet__arrow meet__arrow--next" role="button" aria-lebel="Next">
-                                                <svg width="15" height="14" viewbox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M7.41142 1.32353L13.2122 7.12435M13.2122 7.12435L7.24474 12.7536M13.2122 7.12435L0.787908 6.94284" stroke="white" stroke-width="1.25"></path>
-                                                </svg>
-                                            </button>
+                <div class="gwc delivery">
+                    <div class="delivery__slider">
+                        <?php while( have_rows('entrepreneurs_companies') ) : the_row();
+                            $featured_company = get_sub_field('entrepreneurs_featured_company');
+                            if( $featured_company ):
+                                $bg_color   = get_sub_field('bg_color');
+                                $logo       = get_sub_field('logo', $featured_company->ID);
+                                $delivery_class = get_sub_field('delivery_class');
+                                $image      = get_field('box_image', $featured_company->ID);
+                                $content    = $featured_company->post_content;
+                                $tag        = get_field('tag_name', $featured_company->ID);
+                                $location   = get_field('location', $featured_company->ID);
+                                $link       = get_field('link', $featured_company->ID);?>
+                                <div class="delivery__slide">
+                                    <div class="delivery__tab <?php echo esc_attr($bg_color); ?>">
+                                        <div class="container">
+                                            <div class="delivery__row">
+                                                <div class="delivery__content">
+                                                    <?php if($logo):?>
+                                                        <div class="delivery__logo <?php echo esc_html($delivery_class);?>"><?php echo get_image(array('url'=>$logo)); ?></div>
+                                                    <?php endif;
+                                                    if($tag):?>
+                                                        <span class="l-tag"><?php echo esc_html($tag);?></span>
+                                                    <?php endif;?>
+                                                    <?php if($location):?>
+                                                        <span class="l-tag"><?php echo esc_html($location);?></span>
+                                                    <?php endif;?>
+                                                    <?php echo apply_filters('the_content', $content);?>
+                                                    <?php if($link):?>
+                                                        <a href="<?php echo $link['url'];?>" title="<?php echo $link['title'];?>" target='_blank'><?php echo $link['title'];?><i> <svg width="23" height="21" viewbox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6881 1.00809L21.0488 10.5907M21.0488 10.5907L11.4191 19.8899M21.0488 10.5907L0.999819 10.2909" stroke="white" stroke-width="1.5"></path></svg></i></a>
+                                                    <?php endif;?>
+                                                </div>
+                                                <?php if($image):?>
+                                                    <div class="delivery__thumb"><?php echo get_image(array('url'=> $image)); ?></div>
+                                                <?php endif;?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php endif;
-                    endwhile;?>
+                            <?php endif;
+                        endwhile;?>
+                    </div>
                 </div>
             <?php endif;?>
         </div>

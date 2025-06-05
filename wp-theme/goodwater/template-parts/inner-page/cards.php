@@ -1,4 +1,4 @@
-<div class="gwc approach approach--captal">
+<div class="gwc approach approach--about">
     <?php if( have_rows('card_slider') ): $count=0; $counter=0;?>
         <div class="approach__wrap">
             <div class="approach__slider"> 

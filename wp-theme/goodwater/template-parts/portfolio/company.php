@@ -6,6 +6,7 @@
                 if( $featured_company ):
                     $bg_color   = get_sub_field('bg_color');
                     $logo       = get_sub_field('logo');
+                    $delivery_class = get_sub_field('delivery_class');
                     $image      = get_field('box_image', $featured_company->ID);
                     $content    = $featured_company->post_content;
                     $tag        = get_field('tag_name', $featured_company->ID);
@@ -17,7 +18,7 @@
                                 <div class="delivery__row">
                                     <div class="delivery__content">
                                         <?php if($logo):?>
-                                            <div class="delivery__logo"><?php echo get_image(array('url'=>$logo)); ?></div>
+                                            <div class="delivery__logo <?php echo esc_html($delivery_class);?>"><?php echo get_image(array('url'=>$logo)); ?></div>
                                         <?php endif;
                                         if($tag):?>
                                             <span class="l-tag"><?php echo esc_html($tag);?></span>

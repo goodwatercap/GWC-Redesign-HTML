@@ -11,6 +11,26 @@
   vertical-align: baseline;
 }
 
+
+.gwc.footer .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem; }
+.gwc.footer .container--lg {
+  padding: 0 1.25rem;
+  max-width: 90rem; }
+@media screen and (min-width: 991px) {
+  .gwc.footer .container--lg {
+    padding: 0 3.75rem; } }
+@media screen and (min-width: 991px) {
+  .gwc.footer .container--fluid {
+    padding: 0 3.75rem; } }
+.gwc.footer .container--full {
+  max-width: 90rem; }
+@media screen and (min-width: 991px) {
+  .gwc.footer .container--full {
+    padding: 0 3.75rem; } }
+
 .thesis-page .first-screen h1 {
   text-align: left;
   font-size: 90px;

@@ -432,6 +432,9 @@ body.animation-played .gwc.brand {
   background-color: #181c4b;
   padding: 1.8125rem 0 0.5rem;
   overflow-x: hidden; }
+  @media screen and (min-width: 991px) {
+    .gwc.footer {
+      padding: 1.8125rem 0 1.8125rem; } }
   .gwc.footer .footer__brand .footer__logo {
   width: 15.125rem;
   max-height: 2.42875rem; }

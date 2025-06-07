@@ -8,10 +8,15 @@
  *
  * @package Goodwater
  */
-
+ $footnote = "";
 ?>
+<?php if( array_key_exists('footnote', $args )){
+    $footnote = $args['footnote'];
+}?>
 	<footer class="gwc footer">
         <div class="container container--lg">
+            <?php echo $footnote; ?>
+
           	<div class="footer__brand">
             	<div class="footer__logo">
             		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Logo"><?php echo get_image(array('imgid'=>get_theme_mod('custom_logo'))); ?> </a>

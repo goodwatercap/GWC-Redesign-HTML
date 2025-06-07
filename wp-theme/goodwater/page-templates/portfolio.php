@@ -20,4 +20,4 @@ get_header();?>
 <!-- Career Section -->
 <?php get_template_part('template-parts/portfolio/career'); ?>
 
-<?php get_footer(); ?>
+<?php get_footer(null, array('footnote'=>'<div class="footer__footnote">* Goodwater GPs invested in company before Goodwater</div>')); ?>

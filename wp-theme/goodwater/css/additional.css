@@ -1499,3 +1499,22 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
     padding-top: 1.5rem;
   }
 }
+
+.gwc.footer .footer__footnote {
+  padding-bottom: 2rem;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  color: #93a1ae;
+  position:relative;
+  margin-bottom: 2rem;
+}
+
+.gwc.footer .footer__footnote::after {
+  content: "";
+  position: absolute;
+  height: 0.0625rem;
+  background: #4a5c76;
+  left: -100%;
+  right: -100%;
+  bottom: 0;
+}

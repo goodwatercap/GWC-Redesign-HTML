@@ -1518,3 +1518,15 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
   right: -100%;
   bottom: 0;
 }
+
+@media screen and (min-width: 991px) {
+  .gwc.footer .footer__nav {
+    gap: 3rem;
+  }
+  .gwc.footer .footer__nav .footer__col {
+    justify-content: left;
+  }
+  .gwc.footer .footer__thumb {
+    max-width: 300px;
+  }
+}

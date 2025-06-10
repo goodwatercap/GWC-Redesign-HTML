@@ -25,7 +25,7 @@
 						<?php
                             $category = get_the_category();
                             $parent = get_cat_name($category[0]->category_parent);
-                            (!empty($parent) ? $categoryName = $parent : $categoryName = $category[0]->cat_name);
+                            $categoryName = $category[0]->cat_name;
                         ?>
                         <div class="post-category <?php echo $categoryName ?>">
                             <?php echo $categoryName ?>

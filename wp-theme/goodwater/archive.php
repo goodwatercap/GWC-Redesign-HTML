@@ -14,7 +14,7 @@ get_header();
 <div class="archive-page content-template-page">
     <div class="site-content-contain">
         <?php
-        thesis_posts_query();
+        insights_posts_query();
         if ( have_posts() ) : ?>
             <div id="posts-wrapper">
                 <?php

@@ -139,7 +139,7 @@ if (is_single()) {
                 <?php
                     $category = get_the_category()[0];
                     $parent = get_cat_name($category->category_parent);
-                    (!empty($parent) ? $categoryName = $parent : $categoryName = $category->cat_name);
+                    $categoryName = $category->cat_name;
                     $is_gw_press_preview ? $categoryName .= ": Press Preview" : $categoryName;
                 ?>
                 <div class="category blue">

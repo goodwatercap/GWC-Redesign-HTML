@@ -209,11 +209,11 @@ foreach ( $function_includes as $file ) {
 	require_once $filepath;
 }
 
-function thesis_posts_query() {
+function insights_posts_query() {
     global $wp_query;
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $wp_query = new WP_Query(array(
-        'category_name' => 'thesis',
+        'category_name' => 'insights',
         'paged' => $paged,
         'posts_per_page' => 10,
         'meta_key' => 'featured_order',

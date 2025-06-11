@@ -126,9 +126,17 @@ if (is_single()) {
 
 <div class="thesis-page content-template-page <?php echo get_post_field('post_name', get_post()) ?>">
     <div class="site-content-contain">
-		<?php $bg_image = get_the_post_thumbnail_url(); $subnav_html = get_field('sub_navigation'); $header_slider = get_field('header_slider') ?>
-        <?php $is_gw_ipo = has_category('goodwater-ipo'); ?>
-        <?php $is_gw_press_preview = has_category('goodwater-press-preview'); ?>
+        <?php
+            $featured_image = get_field('featured_image');
+            $featured_image_url = $featured_image ? $featured_image['url'] : NULL;
+        ?>
+		<?php
+            $bg_image = $featured_image_url ?: get_the_post_thumbnail_url();
+            $subnav_html = get_field('sub_navigation');
+            $header_slider = get_field('header_slider');
+            $is_gw_ipo = has_category('goodwater-ipo');
+            $is_gw_press_preview = has_category('goodwater-press-preview');
+        ?>
 		<section
 			class="first-screen post"
 			<?php if ($bg_image) { ?>

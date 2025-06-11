@@ -12,7 +12,7 @@
 get_header();
 ?>
 <div class="archive-page content-template-page">
-    <div class="site-content-contain">
+    <div class="container container--lg">
         <?php
         insights_posts_query();
         if ( have_posts() ) : ?>
@@ -25,16 +25,19 @@ get_header();
                      * If you want to override this in a child theme, then include a file
                      * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                      */
-                    get_template_part( 'template-parts/thesis/content', get_post_format() );
-
-                endwhile;?>
+                    ?>
+                    <div class="post-wrapper">
+                    <?php get_template_part( 'template-parts/thesis/content', get_post_format() ); ?>
+                    </div>
+                <?php endwhile;?>
             </div>
 
-            <?php the_posts_pagination( array(
-                'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-                'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-            ) );
+            <?php
+//            the_posts_pagination( array(
+//                'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
+//                'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+//                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
+//            ) );
 
         else :
 

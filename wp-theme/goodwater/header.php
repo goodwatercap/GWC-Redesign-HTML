@@ -23,8 +23,6 @@
     <meta name="format-detection" content="telephone=no">
 
 	<?php wp_head(); ?>
-
-    <link href="<?php echo get_template_directory_uri(); ?>/css/thesis.css" rel="stylesheet" type="text/css" />
 </head>
 <?php 
 	$body_custom_class = get_field('body_class');

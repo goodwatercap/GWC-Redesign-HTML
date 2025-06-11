@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.1.9' );
+	define( '_S_VERSION', '1.1.11' );
 }
 
 /**
@@ -151,6 +151,8 @@ function goodwater_scripts() {
 	wp_enqueue_style( 'page-ahead-main-style', get_template_directory_uri() . '/css/main.css', array(), _S_VERSION );
 	// Spacing Style
     wp_enqueue_style( 'page-ahead-additional-style', get_template_directory_uri() . '/css/additional.css', array(), _S_VERSION );
+    // Thesis Style
+    wp_enqueue_style( 'page-ahead-thesis-style', get_template_directory_uri() . '/css/thesis.css', array(), _S_VERSION );
 	// Main Script
 	wp_enqueue_script( 'page-ahead-main-js', get_template_directory_uri() . '/js/script.js', array(), _S_VERSION, true );
 	// WP Script
@@ -215,7 +217,7 @@ function insights_posts_query() {
     $wp_query = new WP_Query(array(
         'category_name' => 'insights',
         'paged' => $paged,
-        'posts_per_page' => 10,
+        'posts_per_page' => 100,
         'meta_key' => 'featured_order',
         'orderby' => ['meta_value' => 'ASC', 'date' => 'DESC']
     ));

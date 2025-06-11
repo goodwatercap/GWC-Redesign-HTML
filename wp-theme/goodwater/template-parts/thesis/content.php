@@ -19,24 +19,27 @@
 		endif;
 	?>
 		<?php	if ( 'post' === get_post_type() && !is_single() ) : ?>
-				<div class="post-image"><img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php the_title();?>"></div>
-				<div class="post-content">
-					<div class="container">						
-						<?php
-                            $category = get_the_category();
-                            $parent = get_cat_name($category[0]->category_parent);
-                            $categoryName = $category[0]->cat_name;
-                        ?>
-                        <div class="post-category <?php echo $categoryName ?>">
+            <a class="post" href="<?php the_permalink();?>">
+                <div class="post-image"><img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php the_title();?>"></div>
+                <?php
+                $category = get_the_category();
+                $parent = get_cat_name($category[0]->category_parent);
+                $categoryName = $category[0]->cat_name;
+                ?>
+                <div class="post-content">
+                   <div class="post-text">
+                       <h3><?php the_title();?></h3>
+                       <p><?php the_field('subtitle');?></p>
+                   </div>
+                   <div class="post-tags">
+                        <div class="l-tag <?php echo $categoryName ?>">
                             <?php echo $categoryName ?>
                         </div>
-						<h2><?php the_title();?></h2>
-						<div class="subtitle"><?php the_field('subtitle');?></div>
-						<a href="<?php the_permalink();?>" class="l-btn l-btn--dark">Read More <i> <svg width="11" height="11" viewbox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.21047 1.17139H9.41407M9.41407 1.17139L9.17486 9.3715M9.41407 1.17139L0.500392 9.82837" stroke="white" stroke-width="1.25"></path>
-                                </svg></i></a>
-					</div>
-				</div>					
+                   </div>
+                </div>
+
+
+            </a>
 		<?php endif;?>
 
 	

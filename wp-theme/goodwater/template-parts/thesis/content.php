@@ -20,7 +20,7 @@
 	?>
 		<?php	if ( 'post' === get_post_type() && !is_single() ) : ?>
             <a class="post" href="<?php the_permalink();?>">
-                <div class="post-image"><img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php the_title();?>"></div>
+                <div class="post-image"><?php echo get_image(array('url'=>get_the_post_thumbnail_url()));?></div>
                 <?php
                 $category = get_the_category();
                 $parent = get_cat_name($category[0]->category_parent);

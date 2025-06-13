@@ -883,30 +883,6 @@ a {
 .slick-initialized .slick-slide {
   box-shadow: none; }
 
-.standard-page .gwc.banner--inner {
-  background-position-y: 65px;
-  background-image: url("../images/infy-standard-mob.svg"); }
-  @media screen and (min-width: 991px) {
-    .standard-page .gwc.banner--inner {
-      padding-bottom: 11.4375rem;
-      background-image: url("../images/infy-standard.svg");
-      background-position-y: 0rem; } }
-  @media screen and (max-width: 768px) {
-    .standard-page .gwc.banner--inner {
-      padding-top: 6rem;
-      padding-bottom: 48px; }
-      .standard-page .gwc.banner--inner .banner__details {
-        padding-top: 2.125rem; }
-      .standard-page .gwc.banner--inner br {
-        display: none; } }
-
-.standard-page .gwc.banner--inner .banner__details h1 em {
-  color: #181c4b;
-  font-style: normal; }
-  @media screen and (min-width: 991px) {
-    .standard-page .gwc.banner--inner .banner__details h1 em {
-      font-style: italic; } }
-
 .standard-page .standard-text a {
   color: #2196f3; }
   .standard-page .standard-text a:hover {

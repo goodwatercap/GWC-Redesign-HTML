@@ -1,17 +1,15 @@
 <?php
 /**
- * The template for displaying archive pages
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
+ * The archive template file
+ * Template Name: Archive
+ * Template Type: page
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 get_header();
 ?>
-<div class="archive-page content-template-page">
+<div class="archive-page">
+    <!-- Banner Section -->
+    <?php get_template_part('template-parts/inner-page/banner'); ?>
     <div class="container container--lg">
         <?php
         insights_posts_query();

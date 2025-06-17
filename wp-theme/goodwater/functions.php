@@ -223,6 +223,74 @@ function insights_posts_query() {
     ));
 }
 
+function retrieve_contentful_listings($page /* 0 based */, $pageSize) {
+
+    $http = new WP_Http();
+    $url = 'https://cdn.contentful.com/spaces/'. CONTENTFUL_SPACE_ID .
+        '/environments/' . CONTENTFUL_ENVIRONMENT .
+        '/entries?access_token=' . CONTENTFUL_API_KEY .
+        '&metadata.tags.sys.id[all]=goodwatercap' .  //restrict by tag = goodwater
+        '&content_type=masterclass' . // needed for ordering
+        '&order=-fields.releaseDateTime' . // order by releaseDate, most recent is first
+        '&select=fields.slug,fields.releaseDateTime,fields.title,fields.previewDescription,fields.featuredImage,fields.authorNames,fields.authorDesignations,fields.categories' .
+        '&skip='. ($page * $pageSize) .
+        '&limit=' . $pageSize;
+
+    $args = array(
+        'timeout' => 30, // Timeout after 30 seconds
+        'headers' => array(
+            'Content-Type' => 'application/json',
+        ),
+    );
+
+    $response = $http->get($url, $args);
+
+    if (is_wp_error($response) || $response['response']['code'] != 200) {
+        return $response['response']['code'];
+    }
+
+    $body = json_decode($response['body'], true);
+
+    return $body['items'];
+
+    // use slug as a link to new page with template
+
+    // need to join includes field ids for category (name) and featured image (link).
+
+
+}
+
+function retrieve_contentful_details($slug) {
+    $http = new WP_Http();
+    $url = 'https://cdn.contentful.com/spaces/'. CONTENTFUL_SPACE_ID .
+        '/environments/' . CONTENTFUL_ENVIRONMENT .
+        '/entries?access_token=' . CONTENTFUL_API_KEY .
+        '&metadata.tags.sys.id[all]=goodwatercap' .  //restrict by tag = goodwater
+        '&content_type=masterclass' .
+        '&fields.slug=' . $slug .
+        '&select=fields.releaseDateTime,fields.title,fields.mainDescription,fields.authorImage,' .
+        'fields.authorNames,fields.authorDesignations,fields.authorExternalUrl,fields.numberOfSessionsAndTotalTime,fields.sessions';
+
+
+        $args = array(
+        'timeout' => 30, // Timeout after 30 seconds
+        'headers' => array(
+            'Content-Type' => 'application/json',
+        ),
+    );
+
+    $response = $http->get($url, $args);
+
+    if (is_wp_error($response) || $response['response']['code'] != 200) {
+        return array();
+    }
+
+    $body = json_decode($response['body'], true);
+
+
+    return $body['items'];
+}
+
 /* Fix to get goodwatercap.com/thesis/page/2 to not return a 404 error */
 function remove_page_from_query_string($query_string)
 {

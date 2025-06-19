@@ -14,7 +14,7 @@ get_header();
         <?php
         insights_posts_query();
         if ( have_posts() ) : ?>
-            <div id="posts-wrapper">
+            <div class="posts-wrapper">
                 <?php
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
@@ -43,5 +43,18 @@ get_header();
 
         endif; ?>
     </div>
+    <div class="gwc masterclass">
+        <div class="container container--lg">
+            <h2 class="l-caption">Masterclass</h2>
+            <div class="masterclasses-wrapper">
+                <?php
+                foreach (retrieve_contentful_listings(0, 20) as $count => $item) {
+                    get_template_part( 'template-parts/thesis/masterclass-content', null, array('fields' => $item));
+                } ?>
+            </div>
+        </div>
+    </div>
+
+
     <?php get_footer(); ?>
 </div>

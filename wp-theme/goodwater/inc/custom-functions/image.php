@@ -20,7 +20,7 @@ function image_from_id($id){
 }
 
 
-function get_image($data){
+function get_image($data, $size='full'){
 
     $id     = array_key_exists('imgid',$data)?$data['imgid']:'';
     $url    = array_key_exists('url',$data)?$data['url']:"";
@@ -55,12 +55,12 @@ function get_image($data){
             $image_srcset = wp_get_attachment_image_srcset( $id, 'full');
         }
 
-        if($img_lazy=='no'){
+        if($img_lazy != 'yes'){
             $lazy = '';
         } else {
             $lazy = 'loading="lazy"';
         }
-        $image_attributes = wp_get_attachment_image_src($id,'full');
+        $image_attributes = wp_get_attachment_image_src($id, 'full');
         if($img_size=='no'){
             $h = '';
             $w = '';
@@ -74,9 +74,18 @@ function get_image($data){
         } else {
             $anim = '';
         }
+
+        $sizes_attr = '';
+        if ($size == 'medium') {
+            $sizes_attr = 'sizes="(min-width: 500px) 500px, 100vw"';
+        } else if ($size == 'small') {
+            $sizes_attr = 'sizes="(min-width: 300px) 300px, 100vw"';
+        } else if ($size == 'large') {
+            $sizes_attr = 'sizes="(min-width: 800px) 800px", 100vw';
+        }
         
         //$result = '<img width="'.$w.'" height="'.$h.'" src="'.$url.'" alt="'.$image_alt.'" id="'.$img_id.'" class="'.$img_class.'" '.$lazy.' srcset="'.$image_srcset.'" '.$anim.'>';
-        $result = '<img src="'.$url.'" alt="'.$image_alt.'" id="'.$img_id.'" class="'.$img_class.'" srcset="'.$image_srcset.'" '.$anim.'>';
+        $result = '<img src="'.$url.'" alt="'.$image_alt.'" id="'.$img_id.'" class="'.$img_class.'" srcset="'.$image_srcset.'" '.$sizes_attr.'" '.$lazy.'" '.$anim.'>';
           
         return $result;
     }

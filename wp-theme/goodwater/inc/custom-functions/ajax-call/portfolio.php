@@ -64,7 +64,7 @@ function load_portfolio_ajax(){
             $out .= '</div>';
             if( $total_post >= $limit ):
                 $out .= '<div class="filter__load-more" data-page="1" data-max-pages="'.$max_pages.'"> <a class="l-btn" href="#" title="Load more">Load More</a></div>';
-            endif; 
+            endif;
         endif;
         wp_reset_postdata();
         die($out);

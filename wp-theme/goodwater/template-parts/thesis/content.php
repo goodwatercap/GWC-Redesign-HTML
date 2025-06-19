@@ -11,7 +11,6 @@
  */
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		if ( is_sticky() && is_home() ) :
@@ -20,7 +19,7 @@
 	?>
 		<?php	if ( 'post' === get_post_type() && !is_single() ) : ?>
             <a class="post" href="<?php the_permalink();?>">
-                <div class="post-image"><?php echo get_image(array('url'=>get_the_post_thumbnail_url()));?></div>
+                <div class="post-image"><?php echo get_image(array('url'=>get_the_post_thumbnail_url(), 'lazy' => 'yes'), 'medium');?></div>
                 <?php
                 $category = get_the_category();
                 $parent = get_cat_name($category[0]->category_parent);

@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.1.12' );
+	define( '_S_VERSION', '1.1.13' );
 }
 
 /**
@@ -246,18 +246,52 @@ function retrieve_contentful_listings($page /* 0 based */, $pageSize) {
     $response = $http->get($url, $args);
 
     if (is_wp_error($response) || $response['response']['code'] != 200) {
-        return $response['response']['code'];
+        return array();
     }
 
     $body = json_decode($response['body'], true);
 
-    return $body['items'];
+    // http expected example response body is
+    // {"sys":{"type":"Array"},"total":1,"skip":0,"limit":1000,"items":[{"fields":{"slug":"scaling-spend-and-optimizing-roi-through-an-ai-driven-creative-team","releaseDateTime":"2025-05-08T00:00","title":"Scaling Spend and Optimizing ROI Through an AI-Driven Creative Team","previewDescription":"Learn from Scentbird's incredible success how to increase monthly creatives, optimize CAC and utilize AI to cut costs and speed up production.","featuredImage":{"sys":{"type":"Link","linkType":"Asset","id":"Le1Nk1L9nLJ2acxRSKkF6"}},"authorNames":"Mariya Nurislamova","authorDesignations":"CEO & Co-Founder, Scentbird","categories":[{"sys":{"type":"Link","linkType":"Entry","id":"39WDciQfmRsHahIkfO0R3Z"}},{"sys":{"type":"Link","linkType":"Entry","id":"Marketing"}},{"sys":{"type":"Link","linkType":"Entry","id":"Growth"}}]}}],"includes":{"Entry":[{"metadata":{"tags":[],"concepts":[]},"sys":{"space":{"sys":{"type":"Link","linkType":"Space","id":"9od8q1jf23e1"}},"id":"39WDciQfmRsHahIkfO0R3Z","type":"Entry","createdAt":"2024-03-20T20:26:43.859Z","updatedAt":"2024-03-20T20:26:43.859Z","environment":{"sys":{"id":"master","type":"Link","linkType":"Environment"}},"publishedVersion":2,"revision":1,"contentType":{"sys":{"type":"Link","linkType":"ContentType","id":"masterclassCategory"}},"locale":"en-US"},"fields":{"name":"AI"}},{"metadata":{"tags":[],"concepts":[]},"sys":{"space":{"sys":{"type":"Link","linkType":"Space","id":"9od8q1jf23e1"}},"id":"Growth","type":"Entry","createdAt":"2024-03-07T17:11:46.898Z","updatedAt":"2024-03-20T20:36:47.076Z","environment":{"sys":{"id":"master","type":"Link","linkType":"Environment"}},"publishedVersion":29,"revision":27,"contentType":{"sys":{"type":"Link","linkType":"ContentType","id":"masterclassCategory"}},"locale":"en-US"},"fields":{"name":"Growth","subcategories":[{"sys":{"type":"Link","linkType":"Entry","id":"5IfCfJJuruGVCnbtLvgn0J"}},{"sys":{"type":"Link","linkType":"Entry","id":"2Q6aTqezw63GkQDd8HiHd8"}},{"sys":{"type":"Link","linkType":"Entry","id":"VpVhjDHndfBbLkG5eA5Uo"}},{"sys":{"type":"Link","linkType":"Entry","id":"66xfHWjePrlrnpAPraBXGJ"}},{"sys":{"type":"Link","linkType":"Entry","id":"6hoARPbd2g4G3MCbfrJ0qh"}},{"sys":{"type":"Link","linkType":"Entry","id":"60051cSPRRsQ1CsolGTgzw"}},{"sys":{"type":"Link","linkType":"Entry","id":"7CTlkg07CH8q6xUAMpx3zx"}}]}},{"metadata":{"tags":[],"concepts":[]},"sys":{"space":{"sys":{"type":"Link","linkType":"Space","id":"9od8q1jf23e1"}},"id":"Marketing","type":"Entry","createdAt":"2024-03-07T17:01:25.676Z","updatedAt":"2024-03-20T20:37:28.619Z","environment":{"sys":{"id":"master","type":"Link","linkType":"Environment"}},"publishedVersion":25,"revision":23,"contentType":{"sys":{"type":"Link","linkType":"ContentType","id":"masterclassCategory"}},"locale":"en-US"},"fields":{"name":"Marketing","subcategories":[{"sys":{"type":"Link","linkType":"Entry","id":"129lkgfsXX0DBS27FxJqHu"}},{"sys":{"type":"Link","linkType":"Entry","id":"46ZmrSg1GbKEaDGYnG68cM"}}]}}],"Asset":[{"metadata":{"tags":[],"concepts":[]},"sys":{"space":{"sys":{"type":"Link","linkType":"Space","id":"9od8q1jf23e1"}},"id":"Le1Nk1L9nLJ2acxRSKkF6","type":"Asset","createdAt":"2025-05-08T04:08:11.174Z","updatedAt":"2025-05-08T04:08:11.174Z","environment":{"sys":{"id":"master","type":"Link","linkType":"Environment"}},"publishedVersion":6,"revision":1,"locale":"en-US"},"fields":{"title":"Mariya Nurislamova","description":"","file":{"url":"//images.ctfassets.net/9od8q1jf23e1/Le1Nk1L9nLJ2acxRSKkF6/3046b37c0dacce7867f46b7834f1ea2b/Mariya.jpg","details":{"size":28866,"image":{"width":522,"height":294}},"fileName":"Mariya.jpg","contentType":"image/jpeg"}}}]}}
 
-    // use slug as a link to new page with template
+    // get image links
+    $asset_id_to_links = array();
+    foreach ($body['includes']['Asset'] as $asset) {
+        $id = $asset['sys']['id'];
+        $value = $asset['fields']['file']['url'];
+        $asset_id_to_links[$id] = $value;
+    }
 
-    // need to join includes field ids for category (name) and featured image (link).
+    // get category names
+    $category_id_to_names = array();
+    foreach ($body['includes']['Entry'] as $entry) {
+        if ($entry['sys']['contentType']['sys']['id'] == 'masterclassCategory') {
+            $id = $entry['sys']['id'];
+            $value = $entry['fields']['name'];
+            $category_id_to_names[$id] = $value;
+        }
+    }
 
+    //transform items
+    $results = array();
+    foreach ($body['items'] as $item) {
+        $featured_image_id = $item['fields']['featuredImage']['sys']['id'];
+        $url = $asset_id_to_links[$featured_image_id];
+        $item['fields']['featuredImage'] = $url;
 
+        $category_names = array();
+        foreach ($item['fields']['categories'] as $category) {
+            $category_id = $category['sys']['id'];
+            $category_names[] = $category_id_to_names[$category_id];
+        }
+        $item['fields']['categories'] = $category_names;
+
+        $results[] = $item['fields'];
+    }
+
+    // expected result example is
+    // [{"slug":"scaling-spend-and-optimizing-roi-through-an-ai-driven-creative-team","releaseDateTime":"2025-05-08T00:00","title":"Scaling Spend and Optimizing ROI Through an AI-Driven Creative Team","previewDescription":"Learn from Scentbird's incredible success how to increase monthly creatives, optimize CAC and utilize AI to cut costs and speed up production.","featuredImage":"\/\/images.ctfassets.net\/9od8q1jf23e1\/Le1Nk1L9nLJ2acxRSKkF6\/3046b37c0dacce7867f46b7834f1ea2b\/Mariya.jpg","authorNames":"Mariya Nurislamova","authorDesignations":"CEO & Co-Founder, Scentbird","categories":["AI","Marketing","Growth"]}]
+    return $results;
 }
 
 function retrieve_contentful_details($slug) {

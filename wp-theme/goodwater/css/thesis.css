@@ -1518,7 +1518,7 @@
 }
 
 
-.archive-page #posts-wrapper {
+.archive-page .posts-wrapper {
   display: flex;
   flex-flow: row wrap;
   gap: 1rem;
@@ -1619,5 +1619,86 @@
   .archive-page .post-wrapper:nth-child(n + 3) h3 {
     font-size: 1rem;
     line-height: 1.33rem;
+  }
+}
+
+.gwc.masterclass {
+  background-color: #b9e9f9;
+}
+
+.gwc.masterclass .masterclasses-wrapper {
+  padding-top: 3rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gwc.masterclass article {
+  background-color: white;
+  border-radius: 1rem;
+  flex-basis: calc(33% - 0.5rem);
+}
+@media screen and (max-width: 990px) {
+  .gwc.masterclass article {
+    flex-basis: calc(50% - 0.5rem);
+  }
+}
+@media screen and (max-width: 657px) {
+  .gwc.masterclass article {
+    flex-basis: 100%;
+  }
+}
+
+.gwc.masterclass .post-image img {
+  border-radius: 1rem 1rem 0 0;
+}
+.gwc.masterclass .post-text {
+  padding: 0.5rem 2rem 2rem;
+}
+
+.gwc.masterclass .post-text h3 {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.33rem;
+  padding-bottom: 0.2rem;
+}
+
+
+.gwc.masterclass .post-text p {
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+
+.gwc.masterclass .l-tag {
+  background-color: lightgray;
+  margin-bottom: 0.3rem;
+}
+@media screen and (max-width: 1199px) {
+  .gwc.masterclass .l-tag {
+    font-size: 0.6rem;
+    line-height: 0.7rem;
+  }
+}
+
+
+.gwc.masterclass .info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.7rem;
+  gap: 1rem;
+  margin-right: -1rem;
+}
+
+.gwc.masterclass .info p {
+  line-height: 1.7rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-wrap: nowrap;
+}
+@media screen and (max-width: 1199px) {
+  .gwc.masterclass .info p {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
   }
 }

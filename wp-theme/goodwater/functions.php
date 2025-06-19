@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.1.13' );
+	define( '_S_VERSION', '1.1.14' );
 }
 
 /**
@@ -149,6 +149,12 @@ function goodwater_scripts() {
 	// Main Style
 	wp_enqueue_style( 'goodwater-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'goodwater-style', 'rtl', 'replace' );
+
+    global $wp;
+    if ($wp->request == 'masterclass') {
+        // Files copied from concierge
+        wp_enqueue_style( 'page-ahead-tailwind-style', get_template_directory_uri() . '/css/masterclass/9d62842dded4f098.css', array(), _S_VERSION );
+    }
 	// Plugin Style
 	wp_enqueue_style( 'page-ahead-plugin-style', get_template_directory_uri() . '/css/plugin.css', array(), _S_VERSION );
 	// Main Style
@@ -157,9 +163,10 @@ function goodwater_scripts() {
     wp_enqueue_style( 'page-ahead-additional-style', get_template_directory_uri() . '/css/additional.css', array(), _S_VERSION );
     // Thesis Style
     wp_enqueue_style( 'page-ahead-thesis-style', get_template_directory_uri() . '/css/thesis.css', array(), _S_VERSION );
-	// Main Script
+
+    // Main Script
 	wp_enqueue_script( 'page-ahead-main-js', get_template_directory_uri() . '/js/script.js', array(), _S_VERSION, true );
-	// WP Script
+    // WP Script
 	wp_enqueue_script( 'page-ahead-wp-script-js', get_template_directory_uri() . '/js/wp-script.js', array(), _S_VERSION, true );
     // Tabbis Script
     wp_enqueue_script( 'page-ahead-tabbis-js', get_template_directory_uri() . '/js/tabbis.es6.min.js', array(), _S_VERSION, true );
@@ -169,6 +176,8 @@ function goodwater_scripts() {
     wp_enqueue_script( 'page-ahead-thesis-js', get_template_directory_uri() . '/js/thesis/thesis.js', array(), _S_VERSION, true );
 
     wp_localize_script( 'page-ahead-wp-script-js', 'ajax_object',array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+
+
 }
 add_action( 'wp_enqueue_scripts', 'goodwater_scripts' );
 
@@ -269,7 +278,7 @@ function retrieve_contentful_details($slug) {
         '&metadata.tags.sys.id[all]=goodwatercap' .  //restrict by tag = goodwater
         '&content_type=masterclass' .
         '&fields.slug=' . $slug .
-        '&select=fields.releaseDateTime,fields.title,fields.mainDescription,fields.authorImage,' .
+        '&select=fields.releaseDateTime,fields.title,fields.mainDescription,fields.categories,fields.authorImage,' .
         'fields.authorNames,fields.authorDesignations,fields.authorExternalUrl,fields.numberOfSessionsAndTotalTime,fields.sessions';
 
 
@@ -295,7 +304,7 @@ function retrieve_contentful_details($slug) {
         return array();
     }
 
-    return _resolve_contently_links($body);
+    return _resolve_contently_links($body)[0];
 }
 
 function _resolve_contently_links($body): array

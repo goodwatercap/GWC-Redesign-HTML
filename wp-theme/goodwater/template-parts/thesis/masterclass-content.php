@@ -7,7 +7,7 @@ if( array_key_exists('fields', $args )){
 ?>
 <article class="masterclass">
     <a class="post" href="/masterclass/?article=<?php echo $fields['slug'] ?>">
-        <div class="post-image"><img src="https:<?php echo $fields['featuredImage'] ?>"/></div>
+        <div class="post-image"><img src="<?php echo $fields['featuredImage'] ?>"/></div>
             <div class="post-text">
                 <?php $datetime = strtotime($fields['releaseDateTime']) ?>
                 <div class="info">

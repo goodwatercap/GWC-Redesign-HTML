@@ -1531,4 +1531,21 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
   }
 }
 
+/* for fixing masterclass imported css with goodwatercap header spacing */
+.gwc.header .container {
+  max-width: unset
+}
+@media screen and (min-width: 768px) {
+  .gwc.masterclass-details {
+    padding-top: 4rem;
+  }
+}
+@media screen and (min-width: 991px) {
+  .gwc.masterclass-details {
+    padding-top: 6rem;
+  }
+}
+
+
+
 

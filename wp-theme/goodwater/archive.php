@@ -5,6 +5,15 @@
  * Template Type: page
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
+global $wp;
+if ($wp->request == 'masterclass') {
+    get_template_part('page-templates/masterclass');
+    return;
+} else if ($wp->request != 'insights') {
+    wp_redirect('/');
+    return;
+}
+
 get_header();
 ?>
 <div class="archive-page">

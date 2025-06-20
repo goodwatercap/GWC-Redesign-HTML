@@ -1546,6 +1546,31 @@ body .gwc.filter .filter__row .filter__search .filter__searchbar button {
   }
 }
 
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+dialog {
+  border: none;
+  border-radius: 1rem;
+  padding: 4rem 4rem;
+  max-width: 600px;
+}
+
+dialog h3 {
+  font-size: 2rem;
+  line-height: 3rem;
+  padding-bottom: 1rem;
+}
+
+dialog p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+dialog > div {
+  padding-top: 1.5rem;
+}
 
 
 

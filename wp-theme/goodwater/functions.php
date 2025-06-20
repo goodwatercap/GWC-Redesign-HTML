@@ -150,8 +150,7 @@ function goodwater_scripts() {
 	wp_enqueue_style( 'goodwater-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'goodwater-style', 'rtl', 'replace' );
 
-    global $wp;
-    if ($wp->request == 'masterclass') {
+    if (is_page_template('page-templates/masterclass.php')) {
         // Files copied from concierge
         wp_enqueue_style( 'page-ahead-tailwind-style', get_template_directory_uri() . '/css/masterclass/9d62842dded4f098.css', array(), _S_VERSION );
     }

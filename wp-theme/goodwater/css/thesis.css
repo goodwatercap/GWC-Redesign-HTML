@@ -1631,7 +1631,7 @@
   display: flex;
   flex-flow: row wrap;
   gap: 1rem;
-  justify-content: center;
+  justify-content: left;
 }
 
 .gwc.masterclass article {

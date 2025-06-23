@@ -9,17 +9,17 @@ if( array_key_exists('fields', $args )){
     <a class="post" href="/masterclass/?article=<?php echo $fields['slug'] ?>">
         <div class="post-image"><img src="<?php echo $fields['featuredImage'] ?>"/></div>
             <div class="post-text">
-                <?php $datetime = strtotime($fields['releaseDateTime']) ?>
-                <div class="info">
-                    <p><?php echo date("M j, Y", $datetime)?></p>
-                    <div class="post-tags">
-                        <?php foreach ($fields['categories'] as $categoryName) { ?>
-                            <div class="l-tag <?php echo $categoryName ?>">
-                                <?php echo $categoryName ?>
-                            </div>
-                        <?php } ?>
-                    </div>
-                </div>
+<!--                --><?php //$datetime = strtotime($fields['releaseDateTime']) ?>
+<!--                <div class="info">-->
+<!--                    <p>--><?php //echo date("M j, Y", $datetime)?><!--</p>-->
+<!--                    <div class="post-tags">-->
+<!--                        --><?php //foreach ($fields['categories'] as $categoryName) { ?>
+<!--                            <div class="l-tag --><?php //echo $categoryName ?><!--">-->
+<!--                                --><?php //echo $categoryName ?>
+<!--                            </div>-->
+<!--                        --><?php //} ?>
+<!--                    </div>-->
+<!--                </div>-->
                 <h3><?php echo $fields['title'];?></h3>
                 <p>by <?php echo $fields['authorNames']. ', ' . $fields['authorDesignations'] ?></p>
             </div>

@@ -30,11 +30,11 @@
                        <h3><?php the_title();?></h3>
                        <p><?php the_field('subtitle');?></p>
                    </div>
-                   <div class="post-tags">
-                        <div class="l-tag <?php echo $categoryName ?>">
-                            <?php echo $categoryName ?>
-                        </div>
-                   </div>
+<!--                   <div class="post-tags">-->
+<!--                        <div class="l-tag --><?php //echo $categoryName ?><!--">-->
+<!--                            --><?php //echo $categoryName ?>
+<!--                        </div>-->
+<!--                   </div>-->
                 </div>
 
 

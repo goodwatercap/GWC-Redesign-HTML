@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.1.16' );
+	define( '_S_VERSION', '1.1.18' );
 }
 
 /**
@@ -331,12 +331,22 @@ function _resolve_contently_links($body): array
         }
         if ($entry['sys']['contentType']['sys']['id'] == 'masterclassSession') {
             $id = $entry['sys']['id'];
-            $session_id_to_entry[$id] = array(
-                'title' => $entry['fields']['title'],
-                'thumbnail' => $asset_id_to_links[$entry['fields']['thumbnail']['sys']['id']],
-                'url' => $entry['fields']['url'],
-                'timeSpan' => $entry['fields']['timeSpan']
-            );
+            $hasQanATag = false;
+            foreach ($entry['metadata']['tags'] as $tag) {
+                if ($tag['sys']['id'] == 'q_and_a') {
+                    // exclude the session tagged with q_and_a
+                    $hasQanATag = true;
+                    break;
+                }
+            }
+            if (!$hasQanATag) {
+                $session_id_to_entry[$id] = array(
+                    'title' => $entry['fields']['title'],
+                    'thumbnail' => $asset_id_to_links[$entry['fields']['thumbnail']['sys']['id']],
+                    'url' => $entry['fields']['url'],
+                    'timeSpan' => $entry['fields']['timeSpan']
+                );
+            }
         }
     }
 
@@ -362,7 +372,9 @@ function _resolve_contently_links($body): array
             $sessions = array();
             foreach ($item['fields']['sessions'] as $session) {
                 $session_id = $session['sys']['id'];
-                $sessions[] = $session_id_to_entry[$session_id];
+                if (array_key_exists($session_id, $session_id_to_entry)) {
+                    $sessions[] = $session_id_to_entry[$session_id];
+                }
             }
             $item['fields']['sessions'] = $sessions;
         }

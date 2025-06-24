@@ -7,6 +7,7 @@
  */
 
 get_header();
+$masterclass_one_liner = get_field('masterclass_one_liner');
 ?>
 <div class="archive-page">
     <!-- Banner Section -->
@@ -47,9 +48,11 @@ get_header();
     <div class="gwc masterclass">
         <div class="container container--lg">
             <h2 class="l-caption">Masterclass</h2>
+            <div class="content">
+                <h3><?=$masterclass_one_liner?></h3>
+            </div>
             <div class="masterclasses-wrapper">
-                <?php
-                foreach (retrieve_contentful_listings(0, 20) as $count => $item) {
+                <?php foreach (retrieve_contentful_listings(0, 20) as $count => $item) {
                     get_template_part( 'template-parts/thesis/masterclass-content', null, array('fields' => $item));
                 } ?>
             </div>

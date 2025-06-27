@@ -25,7 +25,7 @@ get_header();
                         <div class="relative mb-3 pt-[56.25%]">
                             <iframe id="session-video" class="absolute left-0 top-0 h-full w-full rounded" height="100%"
                                     src="<?=$fields['sessions'][0]['url']?>" title="masterclass" width="100%"
-                                    allowFullScreen></iframe>
+                                    allowfullscreen></iframe>
                         </div>
                         <div class="hidden w-full rounded bg-white p-7 lg:block"><span id="session-title" class="text-md font-semibold"><?=$fields['sessions'][0]['title']?></span>
                         </div>
